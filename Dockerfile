@@ -1,4 +1,4 @@
-FROM amazoncorretto:17-al2-jdk
+FROM amazoncorretto:17
 MAINTAINER  valen-zambrano
 COPY target/BackEnd-0.0.1-SNAPSHOT.jar BackEnd-0.0.1-SNAPSHOT.jar
 EXPOSE 8080
