@@ -5,12 +5,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.ArrayList;
+import java.util.List;
+
 @Getter@Setter@NoArgsConstructor
 public class Dto {
     private Persona per;
-    private ArrayList<Estudio> estudios;
-    private ArrayList<Habilidad> habilidades;
-    private ArrayList<Proyecto> proyectos;
-    private ArrayList<Experiencia> experiencias;
+    private List<Estudio> estudios;
+    private List<Habilidad> habilidades;
+    private List<Proyecto> proyectos;
+    private List<Experiencia> experiencias;
 }

@@ -5,13 +5,13 @@ import jakarta.persistence.*;
 @Entity
 public class Persona {
     @Id@GeneratedValue(strategy = GenerationType.SEQUENCE)
-    long id;
+    private long id;
     @Column
-    String nombre;
+    private String nombre;
     @Column
-    String ciudad;
+    private String ciudad;
     @Column
-    String info;
+    private String info;
     @Column
-    String sobreMi;
+    private String sobreMi;
 }
