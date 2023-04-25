@@ -1,12 +1,14 @@
 package com.example.BackEnd.Model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
 @Entity
 public class Habilidad {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long id;
+    @Column
+    private String nombre_hab;
+    @Column
+    private String porcentaje;
 }
