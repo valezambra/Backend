@@ -39,7 +39,7 @@ public class Controller {
     public String getDatos()throws JsonProcessingException {
         return traerComoJson();
     }
-    @GetMapping("/login")
+    @PostMapping("/login")
     public String login(@RequestBody Usuario u){
         String retorno = "";
         for (Usuario user:usuarioService.traerUsuarios()) {
