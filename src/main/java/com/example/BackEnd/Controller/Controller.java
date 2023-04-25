@@ -43,8 +43,9 @@ public class Controller {
     public String login(@RequestBody Usuario u){
         String retorno = "";
         for (Usuario user:usuarioService.traerUsuarios()) {
-            if (user.equals(u)){
+            if (user.getEmail().equals(u.getEmail()) && user.getContraseña().equals(u.getContraseña())) {
                 retorno = this.token;
+                break;
             }
         }
         return retorno;
