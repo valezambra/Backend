@@ -29,6 +29,7 @@ public class Controller {
         datos.setEstudios(estudioService.traer());
         datos.setPer(personaService.traer());
         datos.setHabilidades(habilidadService.traer());
+        datos.setExperiencias(experienciaService.traer());
 
         return maper.writeValueAsString(datos);
     }

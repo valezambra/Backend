@@ -17,7 +17,7 @@ public class ExperienciaService implements IExperienciaService{
 
     @Override
     public List<Experiencia> traer() {
-        return null;
+        return repo.findAll();
     }
 
     @Override
