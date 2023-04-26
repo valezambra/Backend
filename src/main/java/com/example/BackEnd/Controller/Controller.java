@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @CrossOrigin(origins = "*")
 public class Controller {
-    private final String token = "token";
+    private final Token token = new Token();
     @Autowired
     private IEstudioService estudioService;
     @Autowired
@@ -40,8 +40,8 @@ public class Controller {
         return traerComoJson();
     }
     @PostMapping("/login")
-    public String login(@RequestBody Usuario u){
-        String retorno = "";
+    public Token login(@RequestBody Usuario u){
+        Token retorno = null;
         for (Usuario user:usuarioService.traerUsuarios()) {
             if (user.getEmail().equals(u.getEmail()) && user.getContraseña().equals(u.getContraseña())) {
                 retorno = this.token;
