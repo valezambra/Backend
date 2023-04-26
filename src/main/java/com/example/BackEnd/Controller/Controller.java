@@ -21,15 +21,12 @@ public class Controller {
     @Autowired
     private IPersonaService personaService;
     @Autowired
-    private IProyectoService proyectoService;
-    @Autowired
     private IUsuarioService usuarioService;
     private String traerComoJson() throws JsonProcessingException {
         ObjectMapper maper = new ObjectMapper();
         Dto datos = new Dto();
 
         datos.setEstudios(estudioService.traer());
-        datos.setProyectos(proyectoService.traer());
         datos.setPer(personaService.traer());
         datos.setHabilidades(habilidadService.traer());
 
@@ -69,30 +66,19 @@ public class Controller {
         habilidadService.crear(hab);
         return traerComoJson();
     }
-    @PostMapping("/crear/proyecto")
-    public String crearProyecto(@RequestBody Proyecto proy) throws JsonProcessingException {
-        proyectoService.crear(proy);
-        return traerComoJson();
-    }
     @DeleteMapping("/eliminar/estudio/{id}")
-    public String eliminarEstudio(@RequestParam long id) throws JsonProcessingException{
+    public String eliminarEstudio(@PathVariable long id) throws JsonProcessingException{
         estudioService.eliminar(id);
         return traerComoJson();
     }
     @DeleteMapping("/eliminar/experiencia/{id}")
-    public String eliminarExperiencia(@RequestParam long id) throws JsonProcessingException{
+    public String eliminarExperiencia(@PathVariable long id) throws JsonProcessingException{
         experienciaService.eliminar(id);
         return traerComoJson();
     }
     @DeleteMapping("/eliminar/habilidad/{id}")
-    public String eliminarHabilidad(@RequestParam long id) throws JsonProcessingException{
+    public String eliminarHabilidad(@PathVariable long id) throws JsonProcessingException{
         habilidadService.eliminar(id);
         return traerComoJson();
     }
-    @DeleteMapping("/eliminar/proyecto/{id}")
-    public String eliminarProyecto(@RequestParam long id) throws JsonProcessingException{
-        proyectoService.eliminar(id);
-        return traerComoJson();
-    }
-
 }

@@ -12,6 +12,5 @@ public class Dto {
     private Persona per;
     private List<Estudio> estudios;
     private List<Habilidad> habilidades;
-    private List<Proyecto> proyectos;
     private List<Experiencia> experiencias;
 }
