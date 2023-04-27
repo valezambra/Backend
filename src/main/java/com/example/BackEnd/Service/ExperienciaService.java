@@ -14,14 +14,12 @@ public class ExperienciaService implements IExperienciaService{
     public void crear(Experiencia exp) {
         repo.save(exp);
     }
-
     @Override
     public List<Experiencia> traer() {
         return repo.findAll();
     }
-
     @Override
     public void eliminar(long id) {
-
+        repo.deleteById(id);
     }
 }
